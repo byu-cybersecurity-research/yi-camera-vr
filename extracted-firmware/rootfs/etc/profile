@@ -1,0 +1,29 @@
+#!/bin/sh
+
+ulimit -c unlimited
+ulimit -s 1024
+
+PATH="/usr/bin:/usr/sbin:/bin:/sbin:/home/base/tools:/home/app/localbin:/home/base"
+LD_LIBRARY_PATH="/lib:/usr/lib:/home/lib:/home/qigan/lib:/home/app/locallib"
+
+export PATH
+export LD_LIBRARY_PATH
+
+export HOME=$(grep -e "^${USER:-root}:" /etc/passwd | cut -d ":" -f 6)
+export HOME=${HOME:-/root}
+export PS1='\u@\h:\w\$ '
+
+mount -t debugfs none /sys/kernel/debug
+#echo 2 >/proc/sys/kernel/randomize_va_space
+
+echo "
+            __    __   _
+            \ \  / /  | |
+             \ \/ /   | |
+              \  /    | |
+              / /     | |
+             /_/      |_|
+ ------------------------------------
+ Welcome to XiaoYi Linux.
+ ------------------------------------
+ "

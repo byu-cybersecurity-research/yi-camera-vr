@@ -1,0 +1,114 @@
+[38]HELLO! BOOT0 is starting!
+[41]BOOT0 commit : 764fc77e2
+[44]board init start
+[46]set pll start
+[48]set pll end
+[50][pmu]: bus read error
+[52][pmu]: bus read error
+[55]board init ok
+[57]chip id check OK
+[59]DRAM BOOT DRIVE INFO: V0.41
+[62]DRAM CLK = 528 MHz
+[64]DRAM Type = 2 (2:DDR2,3:DDR3)
+[67]DRAMC read ODT  off.
+[70]DRAM ODT off.
+[72]DRAM SIZE =64 M
+[78]DRAM simple test OK.
+[81]rtc standby flag is 0x0, super standby flag is 0x0
+[86]dram size =64
+[89]spinor id is: 5e 40 17, read cmd: 0b
+[93]Succeed in reading toc file head.
+[97]The size of toc is 4c000.
+[184]Entry_name        = optee
+[187]Entry_name        = u-boot
+[192]Entry_name        = dtb
+[195]Jump to second Boot.
+MESSAGE: [0x0] TEE-CORE: OP-TEE version: sun8iw19p1_v0.6.0-27-g7f6d3375 #1 Thu Dec 10 03:28:16 UTC 2020 arm
+ERROR:   [0x0] TEE-CORE:platform_standby_fdt_parse:126: no pmu node
+ERROR:   [0x0] TEE-CORE:sunxi_twi_parse_from_dt:127: no pmu node
+
+
+U-Boot 2018.05 (Mar 09 2023 - 19:00:49 +0800) Allwinner Technology
+
+[00.239]DRAM:  64 MiB
+[00.241]Relocation Offset is: f9f94000
+[00.253]secure enable bit: 0
+[00.255]CPU=816 MHz,PLL6=600 Mhz,AHB=200 Mhz, APB1=100Mhz  MBus=132Mhz
+[00.261]gic: sec monitor mode
+[00.264]flash init start
+[00.266]workmode = 0,storage type = 3
+SF: Detected ZB25VQ64 with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+[00.283]sunxi flash init ok
+[00.286]Loading Environment from SUNXI_FLASH... OK
+[00.315]try sprite_led_gpio config
+xxxxxxxxxxxxxxlijun uboot xiaoyiledinit
+[00.323]sprite_led_gpio start
+[00.326](weak)update dtb dram start
+[00.330]update dtb dram  end
+[00.333]update dts
+root_partition is rootfs
+set root to /dev/mtdblock2
+[00.342]update part info
+[00.345]update bootcmd
+mmc driver ver uboot2018:2019-8-15 16:34:00
+get mem for descripter OK !
+[00.357]get sdc_wipe fail.
+[00.359]get sdc0 sdc_erase fail.
+[00.362]get sdc0 sdc_boot fail.
+[00.365]get sdc0 sdc_odly_50M fail.
+[00.369]get sdc0 sdc_sdly_50M fail.
+[00.372]get sdc0 sdc_odly_50M_ddr fail.
+[00.375]get sdc0 sdc_sdly_50M_ddr fail.
+[00.379]get sdc0 sdc_freq fail.
+[00.382]get sdc0 sdc_b0p fail.
+[00.384]get card0_boot_para:sdc_ex_dly_used fail
+[00.390]get card-pwr-gpios handler:1119307360
+[00.394]get card0_boot_para:time_pwroff:200ms
+[00.399]Using default timing para
+[00.602]init mmc 0 clock and io
+devnum 0, prv 43fbd8d4, bdesc 42b74844
+SUNXI SD/MMC: 0
+[00.610]==================== work mode: 0 0, sample_mode:0
+[00.615]=============== start mmc_init_boot...
+[00.633]Card did not respond to voltage select!
+[00.637]mmc_init: -95, time 27
+[00.640]mmc_init: mmc init fail, err -95
+card0 init failed
+No sd-card insert,will normal boot
+debug_tty, print(<NULL>) 
+mmc driver ver uboot2018:2019-8-15 16:34:00
+get mem for descripter OK !
+[00.661]get sdc_wipe fail.
+[00.663]get sdc0 sdc_erase fail.
+[00.666]get sdc0 sdc_boot fail.
+[00.669]get sdc0 sdc_odly_50M fail.
+[00.672]get sdc0 sdc_sdly_50M fail.
+[00.676]get sdc0 sdc_odly_50M_ddr fail.
+[00.679]get sdc0 sdc_sdly_50M_ddr fail.
+[00.683]get sdc0 sdc_freq fail.
+[00.686]get sdc0 sdc_b0p fail.
+[00.688]get card0_boot_para:sdc_ex_dly_used fail
+[00.694]get card-pwr-gpios handler:1119308056
+[00.697]get card0_boot_para:time_pwroff:200ms
+[00.703]Using default timing para
+[00.906]init mmc 0 clock and io
+devnum 0, prv 43fbd8d4, bdesc 42b74a5c
+SUNXI SD/MMC: 0
+[00.914]==================== work mode: 0 0, sample_mode:0
+[00.919]=============== start mmc_init_boot...
+[00.937]Card did not respond to voltage select!
+[00.941]mmc_init: -95, time 27
+[00.944]mmc_init: mmc init fail, err -95
+card0 init failed
+No sd-card insert,will normal boot
+debug_tty, sd not exist !!! 
+Hit ctrl + q  to stop autoboot:  0 
+[01.964]partinfo: name boot, start 0x20, size 0xe80
+[02.436]android.hardware = sun8iw19p1
+## Booting kernel from Legacy Image at 45000000 ...
+   Image Name:   ARM OpenWrt Linux-4.9.118
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    1878024 Bytes = 1.8 MiB
+   Load Address: 40008000
+   Entry Point:  40008000
+[02.503]Starting kernel ...

@@ -1,0 +1,38 @@
+#!/bin/sh
+mount -o loop /dev/mtdblock3 /home
+mount -t jffs2 /dev/mtdblock4 /backup
+sleep 1
+
+start() {
+    if [ -f "/backup/init.sh" ]
+    then
+        /backup/init.sh &
+    else
+        echo "/backup/init.sh not exist!"
+    fi
+}
+
+stop() {
+	pid=$(ps | awk -v partten="rmm" '{if ($5~partten) print $1}')
+    kill -9 $pid
+
+    sleep 1
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart|reload)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
+exit $?
